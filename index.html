@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>پخش ریمیکس</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { text-align: center; font-family: sans-serif; padding: 40px; background: #f0f0f0; }
+    input, button { padding: 10px; font-size: 16px; margin-top: 10px; }
+    #player { display: none; margin-top: 30px; }
+    audio { width: 100%; max-width: 400px; }
+  </style>
+</head>
+<body>
+  <h2>برای پخش ریمیکس، رمز را وارد کن</h2>
+  <input type="password" id="pass" placeholder="رمز عبور">
+  <br>
+  <button onclick="checkPass()">پخش</button>
+  <div id="player">
+    <audio controls controlsList="nodownload">
+      <source src="remix.mp3" type="audio/mpeg">
+      مرورگر شما پخش نمی‌کند.
+    </audio>
+  </div>
+  <script>
+    const correctPassword = "12345"; // رمز
+    function checkPass() {
+      if (document.getElementById("pass").value === correctPassword) {
+        document.getElementById("player").style.display = "block";
+      } else {
+        alert("رمز اشتباه است.");
+      }
+    }
+  </script>
+</body>
+</html>
